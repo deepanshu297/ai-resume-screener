@@ -1,0 +1,14 @@
+# Ignore backend and database folders for Vercel static build
+backend
+app
+requirements.txt
+Dockerfile
+docker-compose.yml
+test_resume_screener.db
+.env
+.pytest_cache
+tests
+inspect_users.py
+LICENSE
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
