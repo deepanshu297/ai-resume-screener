@@ -22,7 +22,7 @@ import {
   FileText,
   UserCheck,
   CheckCircle,
-  FileAlert
+  AlertTriangle
 } from 'lucide-react';
 import { 
   ResponsiveContainer, 

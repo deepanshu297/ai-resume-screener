@@ -22,7 +22,8 @@ import {
   Send,
   MessageSquare,
   DollarSign,
-  Gauge
+  Gauge,
+  RefreshCw
 } from 'lucide-react';
 import api from '../services/api';
 
