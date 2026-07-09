@@ -28,6 +28,16 @@ app.include_router(auth.router)
 app.include_router(candidate.router)
 app.include_router(recruiter.router)
 
+from fastapi.responses import FileResponse
+from fastapi import HTTPException
+
+@app.get("/download-project-zip")
+def download_project_zip():
+    zip_path = "C:/Users/Admin/.gemini/antigravity/scratch/ai-resume-screener.zip"
+    if os.path.exists(zip_path):
+        return FileResponse(zip_path, filename="ai-resume-screener.zip", media_type="application/zip")
+    raise HTTPException(status_code=404, detail="Zip file not found")
+
 @app.get("/")
 def read_root():
     return {
@@ -38,4 +48,5 @@ def read_root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=True)
